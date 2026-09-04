@@ -46,7 +46,7 @@ hf mf autopwn
 
 The raw `.raw` file is dominated by the Proxmark3's strong 13.56 MHz carrier signal. Because the Mifare card is passive, its response is extremely weak and buried in that power wave.
 
-To extract it, I wrote a Python script using `scipy` and `numpy`. The script applies a 4th-order Butterworth bandpass filter centered at **847.5 kHz** (the exact Mifare subcarrier) with a narrow 50 kHz bandwidth to strip away the carrier and isolate the card's load modulation.
+To extract it, I wrote a Python script using `scipy` and `numpy`. The script applies a 4th-order Butterworth bandpass filter centered at **847.5 kHz** (the exact Mifare subcarrier) with a narrow 50 kHz bandwidth to strip away the carrier and isolate the card's load modulation. See the [implementation](code/) for details.
 
 ## Results
 
