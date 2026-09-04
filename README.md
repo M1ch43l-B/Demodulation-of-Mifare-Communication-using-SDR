@@ -1,7 +1,7 @@
 # Demodulating Mifare RFID with RTL-SDR
 
 <div align="center">
-  <img src="[src/hardware.jpeg]" alt="Hardware Setup" width="600"/>
+  <img src="src/hardware.jpeg" alt="Hardware Setup" width="600"/>
 </div>
 
 This is a practical project to visualize the physical radio signals during an RFID attack. Instead of just looking at the Proxmark3 terminal output, I used an RTL-SDR to capture the raw RF over the air and a Python script to filter out the noise and reveal the card's actual response.
@@ -16,8 +16,9 @@ This is a practical project to visualize the physical radio signals during an RF
 The RTL-SDR antenna was placed less than 10 cm away from the Proxmark3 to ensure a strong signal capture.
 
 <div align="center">
-  <img src="[src/setup2.jpeg]" alt="Hardware Setup" width="600"/>
+  <img src="src/setup2.jpeg" alt="Hardware Setup" width="600"/>
 </div>
+
 
 ## Capturing the Signal
 
@@ -50,8 +51,9 @@ To extract it, I wrote a Python script using `scipy` and `numpy`. The script app
 ## Results
 
 <div align="center">
-  <img src="[src/filtro.png]" alt="Filtered Signal Graph" width="800"/>
+  <img src="src/filtro.png" alt="Hardware Setup" width="600"/>
 </div>
+
 
 *   **Top Graph (Blue):** The raw signal from the Proxmark3. The thick band is the constant power carrier, and the sharp drops are the 100% ASK modulation commands sent during the `autopwn` attack.
 *   **Bottom Graph (Red):** The filtered 847.5 kHz signal. This reveals the Mifare card talking back. The spikes clearly show the card transmitting its data immediately after the reader finishes sending a command block.
